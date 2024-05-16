@@ -7,7 +7,7 @@ class Despacho(models.Model):
     fecha_despacho = models.DateField( null=True)
     patente_camion = models.CharField(max_length=6,null=True)
     intento = models.IntegerField(default=0)
-    entregado = models.BooleanField(default=False)
+    entregado = models.BooleanField(null=True)
     id_compra = models.IntegerField(null=True)
     direccion_compra = models.CharField(max_length=80, null=True)
     valor_compra = models.IntegerField(null=True)
