@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  web:
+    build: .
+    networks:
+      - app-tier
+    ports:
+      - "8000:8000"
+    command: python /backend_despacho/manage.py runserver 0:8000
+networks:
+  app-tier:
+    driver: bridge
