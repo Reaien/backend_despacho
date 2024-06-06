@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xkvh34b0*a+iyxs!$9jfo*%ddlmzd59ck^vqt0+p$6kod&_*d9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['44.205.221.190','127.0.0.1']
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -86,10 +86,15 @@ WSGI_APPLICATION = 'backend_despacho.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'despacho',
+        'USER': 'admin_despacho',
+        'PASSWORD': 'despacho_admin',
+        'HOST': '3.231.140.142',  # La IP pública de tu instancia EC2 donde está MySQL
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
@@ -132,4 +137,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

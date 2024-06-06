@@ -29,3 +29,16 @@ class Resumen_Despacho(models.Model):
 
     def __str__(self):
         return f"Resumen Despacho ID:{self.pk}"
+
+class Ventas(models.Model):
+    direccion_compra = models.CharField(max_length=50, null=True)
+    valor_compra = models.IntegerField(null=True)
+    fecha_compra = models.DateField(null=True)
+    despacho_generado = models.BooleanField( default=False)
+
+    class Meta:
+        db_table = 'Ventas'
+
+
+    def __str__(self):
+        return f"Ventas ID:{self.pk}"
