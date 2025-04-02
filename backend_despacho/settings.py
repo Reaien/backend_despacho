@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'backend_despacho.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'despacho',
-        'USER': 'admin_despacho',
-        'PASSWORD': 'despacho_admin',
-        'HOST': '3.231.140.142',  # La IP pública de tu instancia EC2 donde está MySQL
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
